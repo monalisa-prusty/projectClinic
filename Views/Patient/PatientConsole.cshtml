@@ -1,0 +1,48 @@
+﻿@model ClinicManagementProject.Models.Patient
+
+@{
+    ViewData["Title"] = "Home";
+    Layout = "~/Views/Patient/_PatientLayout.cshtml";
+}
+
+<html>
+<head>
+    <link href="~/lib/bootstrap/bootstrap.css" rel="stylesheet" />
+</head>
+<body>
+    <section class="alert alert-danger">
+        @ViewData["Message"]
+    </section>
+    <section>
+        @Html.ActionLink("Book Appointment", "BookAppointment", new { str = Model.Username })
+    </section>
+    <br />
+    <section>
+        @Html.ActionLink("View Upcoming Appointments", "ViewBookedAppointments")
+    </section>
+    <br />
+    <section>
+        @Html.ActionLink("View Past Reports", "ViewPastReport")
+    </section>
+    <br />
+    <section>
+        @Html.ActionLink("Pay Outstanding Bills", "PendingPaymentList")
+    </section>
+    <br />
+    <section>
+        @Html.ActionLink("Update Particulars", "UpdateParticulars")
+    </section>
+    <br />
+    <section>
+        @Html.ActionLink("Change Password", "ChangePassword")
+    </section>
+    <section class="alert alert-danger">
+        @ViewData["BookingMessage"]
+        @ViewData["DeleteBookingMessage"]
+        @ViewData["PaidBillMessage"]
+        @ViewData["ParticularsUpdateMessage"]
+        @ViewData["ChangePasswordMessage"]
+    </section>
+</body>
+
+</html> 
